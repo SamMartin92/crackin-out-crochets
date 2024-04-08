@@ -1,12 +1,19 @@
 let grid = document.getElementById('grid');
+let gridButton =document.getElementById('grid-btn');
 
-function setGridHTML(){
+
+
+
+function setGridHTML(j){
     let tilesHTML ='';
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < j; i++) {
         tilesHTML += '<div class="tile hover"></div>';
     }
     grid.innerHTML = tilesHTML;
     grid.classList.add('container')
 }
 
-setGridHTML();
+gridButton.addEventListener('click',function(){
+    setGridHTML(9)
+});
+
