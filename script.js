@@ -11,11 +11,14 @@ function setGridHTML(rows, cols) {
     container.innerHTML = '';
     container.style.setProperty('grid-template-rows', `repeat(${rows}, 1fr)`);
     container.style.setProperty('grid-template-columns', `repeat(${cols}, 1fr)`);
-    for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div");
-        cell.innerText = (c + 1);
-        container.appendChild(cell).className = "grid-item";
-      };  
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c <cols; c++){
+            let cell = document.createElement("div");
+            cell.innerText = `${r}.${c}`;
+            cell.setAttribute('id', `${r}.${c}`);
+            container.appendChild(cell).className = "grid-item";
+        }      
+      };
 }
 
 gridButton.addEventListener('click', function () {
