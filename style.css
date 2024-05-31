@@ -31,6 +31,10 @@ HTML, body {
     caret-color: transparent;
 }
 
+.grid-item:active {
+    cursor: default;
+}
+
 #container {
     margin: 0 auto;
     height: 80%;
