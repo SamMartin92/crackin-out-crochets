@@ -12,14 +12,9 @@ HTML, body {
     margin: 10px;
 }
 
-#grid {
-    margin: 100px;
-}
 
 .grid-item{
     border: 2px solid #87b3d6;
-    min-width: 100px;
-    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
