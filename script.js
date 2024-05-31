@@ -14,14 +14,18 @@ function setGridHTML(rows, cols) {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c <cols; c++){
             let cell = document.createElement("div");
-            // cell.innerText = `${r}.${c}`;
             cell.setAttribute('id', `${r}.${c}`);
             container.appendChild(cell).className = "grid-item";
+            cell.addEventListener('click', () => fillCell(cell));
         }      
       };
 }
 
-gridButton.addEventListener('click', function () {
+function fillCell(cell){
+    cell.style.setProperty('background-color', 'red')
+}
+
+gridButton.addEventListener('click', () => {
     const rows = rowsInput.value;
     const cols = colsInput.value;
     setGridHTML(rows, cols);
