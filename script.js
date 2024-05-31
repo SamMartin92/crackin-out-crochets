@@ -1,3 +1,4 @@
+const aboveGridSection = document.getElementById('above-grid')
 const grid = document.getElementById('grid');
 const container = document.getElementById('container');
 const gridButton = document.getElementById('grid-btn');
@@ -43,9 +44,19 @@ function fillCell(cell) {
     cell.style.setProperty('background-color', 'red')
 }
 
+function fillGrid() {
+    let fillGridButtonHTML = document.getElementById('fill-grid-btn');
+    fillGridButtonHTML.removeAttribute('class', 'hidden');
+    fillGridButtonHTML.addEventListener('click', () => {
+    container.style.setProperty('background-color', 'black')
+    });
+
+}
+
 gridButton.addEventListener('click', () => {
     const rows = rowsInput.value;
     const cols = colsInput.value;
     setGridHTML(rows, cols);
+    fillGrid();
 });
 
