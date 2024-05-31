@@ -19,8 +19,6 @@ HTML, body {
     justify-content: center;
     align-items: center;
     color: #87b3d6;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #ffecb8;
     cursor: pointer;
     caret-color: transparent;
 }
