@@ -14,7 +14,7 @@ function setGridHTML(rows, cols) {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c <cols; c++){
             let cell = document.createElement("div");
-            cell.innerText = `${r}.${c}`;
+            // cell.innerText = `${r}.${c}`;
             cell.setAttribute('id', `${r}.${c}`);
             container.appendChild(cell).className = "grid-item";
         }      
