@@ -48,8 +48,10 @@ function fillGrid() {
     let fillGridButtonHTML = document.getElementById('fill-grid-btn');
     fillGridButtonHTML.removeAttribute('class', 'hidden');
     fillGridButtonHTML.addEventListener('click', () => {
-        let cells = document.querySelectorAll('grid-item');
-        console.log(cells);
+        let cells = Array.from(document.querySelectorAll('.grid-item'));
+        cells.forEach(cell => {
+            cell.style.setProperty('background-color', 'black');
+        });
     });
 
 }
