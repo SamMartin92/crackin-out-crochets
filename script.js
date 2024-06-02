@@ -57,8 +57,8 @@ function fillGrid() {
 }
 
 gridButton.addEventListener('click', () => {
-    const rows = rowsInput.value;
-    const cols = colsInput.value;
+    const rows = parseInt(rowsInput.value)+2;
+    const cols = parseInt(colsInput.value)+2;
     setGridHTML(rows, cols);
     fillGrid();
 });
