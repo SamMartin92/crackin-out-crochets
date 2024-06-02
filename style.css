@@ -23,6 +23,9 @@ HTML, body {
     display: none;
 }
 
+.outer-cell{
+    border: 1px solid #096d1a;
+}
 
 .grid-item{
     border: 1px solid #87b3d6;
@@ -45,3 +48,4 @@ HTML, body {
     display: grid;
     font-family: "Bubblegum Sans", cursive;
 }
+
