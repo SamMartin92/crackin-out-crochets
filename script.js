@@ -30,8 +30,12 @@ function setGridHTML(rows, cols) {
             let cell = document.createElement("div");
             cell.setAttribute('id', `${r}.${c}`);
 
-            if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1) {
-                container.appendChild(cell).className = "outer-cell"
+            if (r == 0 || r == rows - 1) {
+                container.appendChild(cell).className = "outer-cell";
+                cell.addEventListener('click', () => fillRow());
+            } else if (c == 0 || c == cols - 1) {
+                container.appendChild(cell).className = "outer-cell";
+                cell.addEventListener('click', () => fillCol());
             } else {
                 container.appendChild(cell).className = "grid-item";
                 cell.addEventListener('click', () => fillCell(cell));
@@ -47,6 +51,14 @@ function setGridHTML(rows, cols) {
 
 function fillCell(cell) {
     cell.style.setProperty('background-color', 'red')
+}
+
+function fillRow(){
+    alert('shit workin')
+}
+
+function fillCell(){
+    alert('same here')
 }
 
 function fillGrid() {
