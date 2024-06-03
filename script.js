@@ -37,10 +37,12 @@ function setGridHTML(rows, cols) {
                 container.appendChild(cell).className = "outer-cell";
                 cell.addEventListener('click', () => fillCol(rows, c));
                 cell.addEventListener('mouseover', () => colHover(rows,c));
-
+                cell.addEventListener('mouseleave', () => colHover(rows,c));
             } else if (c == 0 || c == cols - 1) {
                 container.appendChild(cell).className = "outer-cell";
                 cell.addEventListener('click', () => fillRow(cols, r));
+                cell.addEventListener('mouseover', () => rowHover(cols,r));
+                cell.addEventListener('mouseleave', () => rowHover(cols,r));
             } else {
                 container.appendChild(cell).className = "grid-item";
                 cell.addEventListener('click', () => fillCell(cell));
@@ -82,7 +84,16 @@ function colHover(rows, c){
     for (let r = 1; r < rows - 1; r++) {
         let colCell = document.getElementById(`${r}.${c}`)
         if (colCell) {
-            colCell.style.setProperty('filter', 'brightness(50%)');
+            colCell.classList.toggle("dim-brightness");
+        }
+    }
+}
+
+function rowHover(cols, r) {
+    for (let c = 1; c < cols - 1; c++) {
+        let rowCell = document.getElementById(`${r}.${c}`)
+        if (rowCell) {
+            rowCell.classList.toggle("dim-brightness");
         }
     }
 }

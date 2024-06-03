@@ -4,6 +4,14 @@ HTML, body {
       border: 0px;
     }
 
+/* toggle classes */
+
+.dim-brightness{
+    filter: brightness(50%);
+}
+
+/* grid */
+
 #above-grid{
     height: 20vh;
 }
