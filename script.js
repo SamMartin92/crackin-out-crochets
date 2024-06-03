@@ -34,11 +34,13 @@ function setGridHTML(rows, cols) {
                 container.appendChild(cell).className = "corner-cell";
             }
             else if (r == 0 || r == rows - 1) {
+
                 container.appendChild(cell).className = "outer-cell";
-                cell.addEventListener('click', () => fillRow());
+                cell.addEventListener('click', () => fillCol(rows, c));
+
             } else if (c == 0 || c == cols - 1) {
                 container.appendChild(cell).className = "outer-cell";
-                cell.addEventListener('click', () => fillCol());
+                cell.addEventListener('click', () => fillRow(cols, r));
             } else {
                 container.appendChild(cell).className = "grid-item";
                 cell.addEventListener('click', () => fillCell(cell));
@@ -49,19 +51,32 @@ function setGridHTML(rows, cols) {
                 });
             }
         }
-    };
+    }
 }
+
+
 
 function fillCell(cell) {
-    cell.style.setProperty('background-color', 'red')
+    cell.style.setProperty('background-color', 'red');
 }
 
-function fillRow() {
-    alert('shit workin')
+function fillCol(rows, c) {
+    //  1.1,2.1,3.1,4.1
+    for (let r = 1; r < rows - 1; r++) {
+        let colCell = document.getElementById(`${r}.${c}`)
+        if (colCell) {
+            colCell.style.setProperty('background-color', 'green');
+        }
+    }
 }
 
-function fillCol() {
-    alert('same here')
+function fillRow(cols, r) {
+    for (let c = 1; c < cols - 1; c++) {
+        let rowCell = document.getElementById(`${r}.${c}`)
+        if (rowCell) {
+            rowCell.style.setProperty('background-color', 'pink');
+        }
+    }
 }
 
 function fillGrid() {
