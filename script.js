@@ -34,9 +34,9 @@ function setGridHTML(rows, cols) {
                 container.appendChild(cell).className = "corner-cell";
             }
             else if (r == 0 || r == rows - 1) {
-
                 container.appendChild(cell).className = "outer-cell";
                 cell.addEventListener('click', () => fillCol(rows, c));
+                cell.addEventListener('mouseover', () => colHover(rows,c));
 
             } else if (c == 0 || c == cols - 1) {
                 container.appendChild(cell).className = "outer-cell";
@@ -61,7 +61,6 @@ function fillCell(cell) {
 }
 
 function fillCol(rows, c) {
-    //  1.1,2.1,3.1,4.1
     for (let r = 1; r < rows - 1; r++) {
         let colCell = document.getElementById(`${r}.${c}`)
         if (colCell) {
@@ -78,6 +77,17 @@ function fillRow(cols, r) {
         }
     }
 }
+
+function colHover(rows, c){
+    for (let r = 1; r < rows - 1; r++) {
+        let colCell = document.getElementById(`${r}.${c}`)
+        if (colCell) {
+            colCell.style.setProperty('filter', 'brightness(50%)');
+        }
+    }
+}
+
+
 
 function fillGrid() {
     let fillGridButtonHTML = document.getElementById('fill-grid-btn');
