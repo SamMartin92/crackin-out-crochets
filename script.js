@@ -30,7 +30,10 @@ function setGridHTML(rows, cols) {
             let cell = document.createElement("div");
             cell.setAttribute('id', `${r}.${c}`);
 
-            if (r == 0 || r == rows - 1) {
+            if (r == 0 && c == 0 || r == 0 && c == cols - 1 || c == 0 && r == rows - 1 || c == cols - 1 && r == rows - 1) {
+                container.appendChild(cell).className = "corner-cell";
+            }
+            else if (r == 0 || r == rows - 1) {
                 container.appendChild(cell).className = "outer-cell";
                 cell.addEventListener('click', () => fillRow());
             } else if (c == 0 || c == cols - 1) {
@@ -53,11 +56,11 @@ function fillCell(cell) {
     cell.style.setProperty('background-color', 'red')
 }
 
-function fillRow(){
+function fillRow() {
     alert('shit workin')
 }
 
-function fillCell(){
+function fillCol() {
     alert('same here')
 }
 
