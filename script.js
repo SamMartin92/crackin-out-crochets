@@ -81,18 +81,28 @@ function fillRow(cols, r) {
 }
 
 function colHover(rows, c){
-    for (let r = 1; r < rows - 1; r++) {
-        let colCell = document.getElementById(`${r}.${c}`)
-        if (colCell) {
+    for (let r = 0; r < rows; r++) {
+        let colCell = document.getElementById(`${r}.${c}`);
+        if (r==0){
+            colCell.style.setProperty('cursor', 's-resize');
+        } else if (r==rows-1){
+            colCell.style.setProperty('cursor', 'n-resize');
+        } else if (colCell && r!=0 || colCell && c!=rows) {
             colCell.classList.toggle("dim-brightness");
         }
     }
 }
 
+
+
 function rowHover(cols, r) {
-    for (let c = 1; c < cols - 1; c++) {
-        let rowCell = document.getElementById(`${r}.${c}`)
-        if (rowCell) {
+    for (let c = 0; c < cols; c++) {
+        let rowCell = document.getElementById(`${r}.${c}`);
+        if (c==0){
+            rowCell.style.setProperty('cursor', 'e-resize');
+        } else if (c==cols-1){
+            rowCell.style.setProperty('cursor', 'w-resize');
+        } else if (rowCell && c!=0 || rowCell && c!=cols) {
             rowCell.classList.toggle("dim-brightness");
         }
     }
