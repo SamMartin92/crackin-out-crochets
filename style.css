@@ -4,6 +4,14 @@ HTML, body {
       border: 0px;
     }
 
+/* toggle classes */
+
+.dim-brightness{
+    filter: brightness(50%);
+}
+
+/* grid */
+
 #above-grid{
     height: 20vh;
 }
@@ -19,7 +27,13 @@ HTML, body {
 .grid-input{
     margin: 10px;
 }
+.hidden{
+    display: none;
+}
 
+.outer-cell{
+    border: 1px solid #096d1a;
+}
 
 .grid-item{
     border: 1px solid #87b3d6;
@@ -31,6 +45,10 @@ HTML, body {
     caret-color: transparent;
 }
 
+.grid-item:active {
+    cursor: default;
+}
+
 #container {
     margin: 0 auto;
     height: 80%;
@@ -38,3 +56,4 @@ HTML, body {
     display: grid;
     font-family: "Bubblegum Sans", cursive;
 }
+
