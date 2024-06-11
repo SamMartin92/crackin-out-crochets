@@ -4,6 +4,8 @@ const container = document.getElementById('container');
 const gridButton = document.getElementById('grid-btn');
 const rowsInput = document.getElementById('rows');
 const colsInput = document.getElementById('columns');
+const currentColour = document.getElementById('colour');
+
 
 // mouseevents
 
@@ -59,14 +61,14 @@ function setGridHTML(rows, cols) {
 
 
 function fillCell(cell) {
-    cell.style.setProperty('background-color', 'red');
+    cell.style.setProperty('background-color', currentColour.value);
 }
 
 function fillCol(rows, c) {
     for (let r = 1; r < rows - 1; r++) {
         let colCell = document.getElementById(`${r}.${c}`)
         if (colCell) {
-            colCell.style.setProperty('background-color', 'green');
+            colCell.style.setProperty('background-color', currentColour.value);
         }
     }
 }
@@ -75,7 +77,7 @@ function fillRow(cols, r) {
     for (let c = 1; c < cols - 1; c++) {
         let rowCell = document.getElementById(`${r}.${c}`)
         if (rowCell) {
-            rowCell.style.setProperty('background-color', 'pink');
+            rowCell.style.setProperty('background-color', currentColour.value);
         }
     }
 }
@@ -116,7 +118,7 @@ function fillGrid() {
     fillGridButtonHTML.addEventListener('click', () => {
         let cells = Array.from(document.querySelectorAll('.grid-item'));
         cells.forEach(cell => {
-            cell.style.setProperty('background-color', 'black');
+            cell.style.setProperty('background-color', currentColour.value);
         });
     });
 
